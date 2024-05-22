@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+
+/*GENERAL RULES AND CLASSES*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 23px;
+    color: hsl(218, 44%, 22%);
+    margin-bottom: 15px;
+}
+
+p {
+    color: hsl(220, 15%, 55%);
+    font-size: 15px;
+}
+
+/*SPECIFIC STYLING AND POSITIONING*/
+.layout_container  {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Outfit", sans-serif;
+    flex-direction: column;
+    background-color:hsl(212, 45%, 89%);
+    /*To position the '.attribution' element properly:*/
+    position: relative;
+}
+
+.qr_white_window {
+    flex-direction: column;
+    justify-content: start;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 16px;
+}
+
+main {
+    width: 320px;
+    height: 497px;
+    border-radius: 20px;
+}
+
+figure {
+    border-radius: 10px;
+    width: 288px;
+    height: 288px;
+    background-image: url(../images/image-qr-code.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.text_box {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.attribution {
+    position: absolute;
+    text-align: center;
+    right: 50%;
+    bottom: 2%;
+    transform: translate(50%, 0);
+}
