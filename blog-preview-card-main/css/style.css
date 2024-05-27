@@ -17,6 +17,11 @@
 }
 
 /*GENERAL RULES AND CLASSES*/
+body {
+
+    font-family: "Figtree", sans-serif;
+}
+
 .flex {
     display: flex;
     align-items: center;
@@ -26,11 +31,13 @@
 h1 {
     font-size: 20px;
     font-weight: 800;
-    color: var(--yellow);
+    color: var(--black);
 }
 
 p {
-    color: var(--grey);
+    color: var(--black);
+    font-size: 15px;
+    margin: 12px 0;
 }
 
 a {
@@ -41,7 +48,6 @@ a {
 .layout_container {
     width: 100vw;
     height: 100vh;
-    font-family: "Figtree", sans-serif;
     flex-direction: column;
     background-color: var(--yellow);
     /*To position the '.attribution' element properly:*/
@@ -49,16 +55,18 @@ a {
 }
 
 .qr_white_window {
-    width: 384px;
-    height: 522px;
+    width: 327px;
+    height: 501px;
     border-radius: 20px;
     background-color: #fff;
     padding: 24px;
+    border: 1px solid var(--black);
+    box-shadow: 7px 7px var(--black);
 }
 
 #main_image {
     border-radius: 10px;
-    width: 336px;
+    width: 279px;
     height: 200px;
     background-image: url(../assets/images/illustration-article.svg);
     background-repeat: no-repeat;
@@ -75,30 +83,33 @@ a {
 
 .text_box {
     text-align: start;
-    margin: 25px 0;
+    margin: 24px 0;
     width: 100%;
 }
 
-.text_box h1, .text_box p {
-    padding: 8px 0;
-}
+h1:hover {
+    color: var(--yellow);
+    cursor: url(../assets/images/black_hand_cursor20x20.png), auto;
 
-.text_box p:nth-of-type(1),
+}
+/* 
+.text_box p {
+    padding-top: 12px;
+} */
+
 .text_box p:nth-of-type(2) {
-    font-size: 14px;
-    color: var(--black);
+    color: var(--grey);
 }
 
-.text_box p:nth-of-type(1) {
+button {
     display: inline;
-    font-weight: 800;
+    font-size: 16px;
+    font-weight: 600;
     background-color: var(--yellow);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.text_box p:nth-of-type(2) {
-    margin-top: 20px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
 }
 
 .author_credit {
@@ -119,3 +130,21 @@ a {
     bottom: 2%;
     transform: translate(50%, 0);
 }
+
+
+@media screen and (min-width:1440px){
+
+    .qr_white_window {
+        width: 384px;
+        height: 522px;
+    }
+
+    #main_image {
+        width: 336px;
+    }
+
+    h1, p {
+        padding: 2px 0;
+    }
+}
+    
