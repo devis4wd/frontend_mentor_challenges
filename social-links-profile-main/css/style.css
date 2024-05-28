@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 /*STYLE RESET AND VARIABLES*/
 * {
     margin: 0;
@@ -14,7 +13,6 @@
     --grey: hsl(0, 0%, 20%);
     --dark_grey: hsl(0, 0%, 12%);
     --off_black: hsl(0, 0%, 8%);
-
 }
 
 /*GENERAL RULES AND CLASSES*/
@@ -52,7 +50,6 @@ a {
 
 /*SPECIFIC STYLING AND POSITIONING*/
 .layout_container {
-
     justify-content: center;
     width: 100vw;
     height: 100vh;
