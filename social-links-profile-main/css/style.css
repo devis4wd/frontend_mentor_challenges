@@ -126,7 +126,7 @@ figure img {
     color: var(--green);
 }
 
-
+/*SCREENS WIDTH 1440PX AND ABOVE*/
 @media screen and (min-width:1440px) {
 
     .darkgrey_container {
