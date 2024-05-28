@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+
+/*STYLE RESET AND VARIABLES*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 20%);
+    --dark_grey: hsl(0, 0%, 12%);
+    --off_black: hsl(0, 0%, 8%);
+
+}
+
+/*GENERAL RULES AND CLASSES*/
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--white);
+    padding: 22px 0 10px 0;
+}
+
+p {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+.location_tag {
+    color: var(--green);
+    font-weight: 800;
+}
+
+/*SPECIFIC STYLING AND POSITIONING*/
+.layout_container {
+
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--off_black);
+    /*To position the '.attribution' element properly:*/
+    position: relative;
+}
+
+.darkgrey_container {
+    justify-content: space-evenly;
+    width: 327px;
+    border-radius: 10px;
+    background-color: var(--dark_grey);
+    padding: 24px;
+}
+
+header {
+    text-align: center;
+}
+
+figure img {
+    border-radius: 50%;
+}
+
+#bio p {
+    padding: 25px 0 20px 0;
+}
+
+.buttons_container {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.account_button {
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+    margin: 8px;
+    background-color: var(--grey);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    border-radius: 8px;
+    cursor: url(../assets/images/black_hand_cursor20x20.png), auto;
+}
+
+.account_button:first-of-type {
+    margin-top: 0;
+}
+
+.account_button:last-of-type {
+    margin-bottom: 0;
+}
+
+.account_button:hover {
+    color: var(--off_black);
+    background-color: var(--green);
+}
+
+.attribution {
+    position: absolute;
+    right: 50%;
+    bottom: 2%;
+    transform: translate(50%, 0);
+    text-align: center;
+}
+
+.attribution p {
+    font-size: 10px;
+}
+
+.attribution a {
+    color: var(--green);
+}
+
+
+@media screen and (min-width:1440px) {
+
+    .darkgrey_container {
+        width: 384px;
+        height: 600px;
+        padding: 30px 40px;
+    }
+
+}
