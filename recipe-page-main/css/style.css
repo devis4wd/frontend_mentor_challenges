@@ -22,6 +22,8 @@
 /*GENERAL RULES AND CLASSES*/
 body {
     font-family: "Outfit", sans-serif;
+
+    background-color: var(--eggshell);
 }
 
 h1,
@@ -132,6 +134,10 @@ section[class=instructions] ol {
     border-top: 1px solid var(--light_grey);
 }
 
+.nutrition {
+    padding-bottom: 30px;
+}
+
 .nutrition h2 {
     padding: 24px 0;
 }
@@ -165,8 +171,7 @@ tr td:nth-of-type(2) {
 
 /*footer*/
 .attribution {
-    margin-top: 50px;
-    padding: 20px 0;
+    padding: 30px 0 20px;
     text-align: center;
 }
 
@@ -192,8 +197,7 @@ tr td:nth-of-type(2) {
         align-items: center;
         justify-content: center;
         width: 100vw;
-        height: 100vh;
-        background-color: var(--eggshell);
+        height: 100%;
     }
 
     .white_container {
@@ -214,6 +218,10 @@ tr td:nth-of-type(2) {
     section,
     .preparation_time {
         width: 92%;
+    }
+
+    .nutrition {
+        padding-bottom: 0;
     }
 
     .attribution {
