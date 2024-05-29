@@ -34,12 +34,12 @@ h2 {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 30px;
     color: var(--dark_charcoal);
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 24px;
     color: var(--nutmeg);
 }
 
@@ -49,7 +49,7 @@ h3 {
 }
 
 p {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--wenge_brown);
 }
 
@@ -60,7 +60,6 @@ a {
 .flex {
     display: flex;
     flex-direction: column;
-    align-items: start;
 }
 
 /*SPECIFIC STYLING AND POSITIONING*/
@@ -71,16 +70,21 @@ a {
 }
 
 /*Had to differentiate cause I needed to keep the header image at 100%width with no lateral padding or margin*/
-header h1, header p {
-    padding: 10px 20px 10px 20px;
+header h1,
+header p {
+    padding: 10px 0;
+}
+
+header {
+    width: 83%;
+    margin: 0 auto;
 }
 
 section {
-    width: 90%;
+    width: 83%;
     /* padding: 0 20px 10px 20px; */
     margin: 20px auto 0;
 }
-
 
 figure {
     background-image: url(../assets/images/image-omelette.jpeg);
@@ -89,18 +93,21 @@ figure {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 30px;
 }
 
 .preparation_time {
     padding: 10px;
-    width: 80%;
+    width: 85%;
     border-radius: 10px;
     background-color: var(--rose_white);
 }
 
-ul, ol {
-    list-style-position: inside;
+ul,
+ol {
+    margin-left: 10px;
     padding: 20px 15px;
+    color: var(--wenge_brown);
 }
 
 li {
@@ -112,15 +119,58 @@ li::marker {
     font-weight: 600;
 }
 
+section[class=ingredients] ul,
+section[class=instructions] ol {
+    padding-bottom: 10px;
+}
+
+.instructions h2 {
+    padding-top: 24px;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+    table-layout: fixed;
+    color: var(--wenge_brown);
+}
+
+td {
+    width: 50%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light_grey);
+}
+
+tr:last-of-type td {
+    border-bottom: none;
+}
+
+
+
+tr td:nth-of-type(1) {
+    padding-left: 30px;
+}
+
+tr td:nth-of-type(2) {
+    color: var(--nutmeg);
+    font-weight: 800;
+}
+
+.instructions,
+.nutrition {
+    border-top: 1px solid var(--light_grey);
+}
+
+.nutrition h2 {
+    padding: 24px 0;
+}
 
 
 /*ATTRIBUTION*/
 .attribution {
-    position: absolute;
+    margin-top: 50px;
     padding: 20px 0;
-    right: 50%;
-    bottom: 2%;
-    transform: translate(50%, 0);
     text-align: center;
 }
 
@@ -137,25 +187,52 @@ li::marker {
 /*SCREENS WIDTH 1440PX AND ABOVE*/
 @media screen and (min-width:500px) {
 
+    html {
+        position: relative;
+    }
+
     .layout_container {
+        align-items: center;
         justify-content: center;
         width: 100vw;
-        height: 100vh;
+        /*necessario affinché si possa scrollare per tutta l'altezza del white container (più alto del vh) senza problemi*/
+        height: 100%;
         background-color: var(--eggshell);
         /*To position the '.attribution' element properly:*/
-        position: relative;
+
     }
 
     .white_container {
         /* justify-content: space-evenly; */
+        /*This woks properly as far as the .layout_container is set at height: 100%*/
+        margin: 50px 0 80px 0;
         border-radius: 20px;
-        width: 400px;
+        width: 750px;
         /* height: 600px; */
-        padding: 30px 40px;
+        padding: 40px 20px;
+    }
+
+    figure {
+        width: 92%;
+        margin: 0 auto 30px;
+        border-radius: 10px;
+    }
+
+
+    header,
+    section,
+    .preparation_time {
+        width: 92%;
     }
 
     .attribution {
-        padding: 0;
+        position: absolute;
+        margin-top: 0;
+        padding: 20px;
+        right: 50%;
+        bottom: 0;
+        transform: translate(50%, 0);
+        text-align: center;
     }
 
 }
