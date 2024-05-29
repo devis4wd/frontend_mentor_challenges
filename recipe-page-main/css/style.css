@@ -40,7 +40,7 @@ h1 {
 
 h2 {
     font-size: 20px;
-    color: var(--nutmeg) ;
+    color: var(--nutmeg);
 }
 
 h3 {
@@ -60,25 +60,56 @@ a {
 .flex {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 }
 
 /*SPECIFIC STYLING AND POSITIONING*/
-.layout_container {
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--eggshell);
-    /*To position the '.attribution' element properly:*/
-    position: relative;
+.white_container {
+    /* justify-content: space-evenly; */
+    width: 100%;
+    background-color: var(--white);
 }
 
-.white_container {
-    justify-content: space-evenly;
-    width: 327px;
+/*Had to differentiate cause I needed to keep the header image at 100%width with no lateral padding or margin*/
+header h1, header p {
+    padding: 10px 20px 10px 20px;
+}
+
+section {
+    width: 90%;
+    /* padding: 0 20px 10px 20px; */
+    margin: 20px auto 0;
+}
+
+
+figure {
+    background-image: url(../assets/images/image-omelette.jpeg);
+    width: 100%;
+    height: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.preparation_time {
+    padding: 10px;
+    width: 80%;
     border-radius: 10px;
-    background-color: var(--white);
-    padding: 24px;
+    background-color: var(--rose_white);
+}
+
+ul, ol {
+    list-style-position: inside;
+    padding: 20px 15px;
+}
+
+li {
+    padding: 5px 0;
+}
+
+li::marker {
+    color: var(--nutmeg);
+    font-weight: 600;
 }
 
 
@@ -86,6 +117,7 @@ a {
 /*ATTRIBUTION*/
 .attribution {
     position: absolute;
+    padding: 20px 0;
     right: 50%;
     bottom: 2%;
     transform: translate(50%, 0);
@@ -103,12 +135,27 @@ a {
 
 
 /*SCREENS WIDTH 1440PX AND ABOVE*/
-/* @media screen and (min-width:1440px) {
+@media screen and (min-width:500px) {
 
-    .darkgrey_container {
-        width: 384px;
-        height: 600px;
+    .layout_container {
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--eggshell);
+        /*To position the '.attribution' element properly:*/
+        position: relative;
+    }
+
+    .white_container {
+        /* justify-content: space-evenly; */
+        border-radius: 20px;
+        width: 400px;
+        /* height: 600px; */
         padding: 30px 40px;
     }
 
-} */
+    .attribution {
+        padding: 0;
+    }
+
+}
