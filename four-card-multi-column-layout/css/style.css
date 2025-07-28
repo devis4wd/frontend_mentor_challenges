@@ -30,6 +30,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 h1 {
@@ -46,8 +47,8 @@ h1 {
         0 0 3px var(--black);
     font-weight: 200;
     text-align: center;
-    font-size: 2.8rem;
-    line-height: 3.4rem;
+    font-size: 2.6rem;
+    line-height: 3.2rem;
     margin-bottom: 1rem;
 }
 
@@ -66,7 +67,7 @@ strong {
 header {
     width: 60vw;
     margin: 0 auto;
-    padding: 1.5rem 0;
+    padding: 2rem 0 1.5rem 0;
 }
 
 main {
@@ -74,7 +75,6 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 0 1rem 0;
     margin: 0 auto;
 }
 
@@ -89,7 +89,7 @@ main {
 
 .box {
     padding: 8%;
-    height: 230px;
+    height: 200px;
     border-radius: 5px;
     margin: 2rem 0;
     color: var(--black);
@@ -103,7 +103,8 @@ main {
 
 .box img {
     display: block;
-    margin: 2rem 0 0 auto;
+    height: 50px;
+    margin: 1.2rem 0 0 auto;
 }
 
 .box1 {
@@ -156,6 +157,7 @@ footer {
     color: var(--orange);
     font-weight: 900;
 }
+
 
 /*MOBILE VIEW*/
 @media screen and (max-width: 600px) {
