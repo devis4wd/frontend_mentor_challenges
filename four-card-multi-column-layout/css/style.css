@@ -25,6 +25,7 @@ html {
 body {
     font-family: var(--standard-font);
     font-size: 0.938rem;
+    height: 100vh;
     color: var(--black);
     background-image: url(../images/background_compressed_ver.jpg);
     background-position: center;
