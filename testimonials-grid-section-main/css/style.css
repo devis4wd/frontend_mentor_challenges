@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*Primary colors*/
+    --purple-50: #EEE5FF;
+    --purple-300: #C4A2F6;
+    --purple-500: #7541C8;
+
+    /*Neutral colors*/
+    --white: #FFFFFF;
+    --grey-100: #E7EAEE;
+    --grey-200: #CFCFCF;
+    --grey-400: #676D7E;
+    --grey-500: #48556A;
+    --dark-blue: #19212E;
+    --black: #121212;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 500;
+    /* 200 / 300 / 400 / -- 600 --  */
+    font-size: 0.8rem;
+    font-style: normal;
+    background-color: var(--grey-100);
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: var(--white);
+}
+
+p {
+    font-weight: 400;
+    line-height: 1.1rem;
+    color: var(--white);
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2 1fr);
+    grid-template-areas:
+        "test1 test1 test2 test5"
+        "test3 test4 test4 test5";
+    grid-gap: 2rem;
+}
+
+.testimonial {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    z-index: 0;
+    overflow: hidden;
+    box-shadow: 25px 40px 40px 5px #47474748;
+}
+
+#testimonial-1 {
+    grid-area: test1;
+    background-color: var(--purple-500);
+    position: relative;
+}
+
+#testimonial-2 {
+    grid-area: test2;
+    background-color: var(--grey-500);
+}
+
+#testimonial-3 {
+    grid-area: test3;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+#testimonial-4 {
+    grid-area: test4;
+    background-color: var(--dark-blue);
+}
+
+#testimonial-5 {
+    grid-area: test5;
+    background-color: var(--white);
+}
+
+#testimonial-3 h2,
+#testimonial-3 p,
+#testimonial-5 h2,
+#testimonial-5 p {
+    color: var(--black);
+}
+
+.testimonial-header {
+    align-items: center;
+}
+
+.profile-pic-box {
+    height: 40px;
+    width: 40px;
+    border-radius: 56px;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid var(--purple-50);
+    margin-right: 1rem;
+}
+
+.profile-pic-box img {
+    width: inherit;
+    height: inherit;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.job-title {
+    font-weight: 300;
+}
+
+/*Piece of code only required to make z-index work properly and 
+poition the quote svg correctly in the background*/
+#testimonial-1 h2,
+#testimonial-2 p {
+    position: relative;
+    z-index: 2;
+}
+
+#quote-graphic {
+    position: absolute;
+    right: 10%;
+    top: -0;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/*Attribution*/
+footer {
+    padding: 3rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.attribution a:hover {
+    color: hsl(308, 100%, 47%);
+}
+
+
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN */
+
+@media screen and (max-width: 1440px) {
+    main {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+
+    .testimonial-header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .profile-pic-box {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    main {
+        width: 90%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3 1fr);
+        grid-template-areas:
+            "test1 test1 test2"
+            "test3 test4 test4"
+            "test5 test5 test5";
+    }
+
+    .testimonial-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .profile-pic-box {
+        margin-bottom: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    main {
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5 1fr);
+        grid-template-areas:
+            "test1"
+            "test2"
+            "test3"
+            "test4"
+            "test5";
+    }
+
+    .profile-pic-box {
+        margin-bottom: 0;
+    }
+}
