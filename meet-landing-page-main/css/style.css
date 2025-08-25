@@ -1,0 +1,522 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --violet: #b18bdd;
+    --dark-violet: #855fb1;
+    --light-blue: #87daf0;
+    --blue: #71c0d4;
+    --dark-blue: #4d96a9;
+    --grey: #e0e0e6;
+    --white: #fff;
+    --black: #000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Red Hat Display", sans-serif;
+    /*300 - 900*/
+    font-size: 16px;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+h1 {
+    /*min 1.5 rem in small screen, ideally 5% of vw and max 3rem*/
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: var(--black);
+    font-weight: 900;
+}
+
+p {
+    /*Properties for slideIn animation defined with keyframes*/
+    opacity: 0;
+    animation: slideIn .5s forwards;
+    transform: translateY(200%);
+}
+
+h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 900;
+}
+
+h3 {
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    font-weight: 900;
+    letter-spacing: 12%;
+}
+
+p {
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    /*altezza di header 100px più padding verticale dell'header*/
+    padding: 25px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-box {
+    margin: 0 auto;
+    width: 119px;
+}
+
+.herobox {
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "bck-img1 text bck-img2";
+    padding: 3rem 0 5rem 0;
+}
+
+.hero-desktop-bcgrnd-left {
+    background-image: url(/images/desktop/image-hero-left.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.hero-text-box {
+    grid-area: text;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.herobox p {
+    margin: 2rem 0 3rem 0;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+    line-height: clamp(1.2rem, 5vh, 1.6rem);
+}
+
+.hero-buttons-box {
+    width: 60%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.button {
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#hero-btn-1 {
+    /*Trick to create hover effect*/
+    background: linear-gradient(to left, var(--dark-blue) 50%, var(--white) 50%) right;
+    background-size: 200%;
+    transition: all 0.3s ease-in-out;
+}
+
+#hero-btn-1 span {
+    color: var(--light-blue);
+}
+
+#hero-btn-2 {
+    /*Trick to create hover effect*/
+    background: linear-gradient(to left, var(--dark-violet) 50%, var(--white) 50%) right;
+    background-size: 200%;
+    transition: all 0.3s ease-in-out;
+}
+
+/*Trick to create hover effect*/
+#hero-btn-1:hover,
+#hero-btn-2:hover {
+    background-position: left;
+}
+
+#hero-btn-1:hover {
+    outline: 2px solid var(--dark-blue);
+    color: var(--dark-blue);
+}
+
+#hero-btn-2:hover {
+    outline: 2px solid var(--dark-violet);
+    color: var(--dark-violet);
+}
+
+.hero-desktop-bcgrnd-right {
+    background-image: url(/images/desktop/image-hero-right.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+.gallery {
+    padding: 8rem 0 4rem 0;
+    width: 90%;
+    max-height: 800px;
+    margin: 0 auto;
+}
+
+.number1-box {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 150px;
+    border: 2px solid var(--grey);
+}
+
+.number1-box p {
+    font-size: 1rem;
+    line-height: 2.8rem;
+    color: var(--black);
+}
+
+.gallery-cards {
+    padding: 3rem 0;
+    justify-content: space-between;
+}
+
+.card {
+    width: 23%;
+    border-radius: 20px;
+    overflow: hidden;
+    /*To allow JS calculating the right timing based on scrolling advancement*/
+}
+
+.card img {
+    /* Did this casue <img> are inline tags, so they get aligne as if they were text and 
+    have an expra space below their bottom to align to the text baseline of their container. 
+    That means thatm if not turned into a block element, they'll always have an empry gap between
+    their bottom and the bottom of their container. */
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.company-info-section {
+    padding: 0rem 0 8rem 0;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: auto;
+    /*Used two dots for empty spaces in grid becacasue
+    i haven0t created empty divs in html and if I used names
+    instead of '.' grid wouldn't work as expected in this case */
+    grid-template-areas: ". company-txt .";
+}
+
+.company-text-box {
+    width: 80%;
+    grid-area: company-txt;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.company-text-box h2 {
+    width: 65%;
+    margin: 1rem auto 2rem auto;
+}
+
+footer {
+    padding: 5rem 0 5rem 0;
+    background-image: url(/images/desktop/image-footer.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4d97a9da;
+    z-index: -1;
+}
+
+footer h2,
+footer p {
+    color: var(--white);
+}
+
+.footer-centred-box {
+    width: 80%;
+    height: inherit;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    /*Used two dots for empty spaces in grid becacasue
+    i haven't created empty divs in html and if I used names
+    instead of '.' grid wouldn't work as expected in this case */
+    grid-template-areas: "box1 box2 box3";
+}
+
+.footer-box {
+    text-align: left;
+    align-items: start;
+}
+
+#foot-box1 {
+    grid-area: box1;
+}
+
+#foot-box2 {
+    grid-area: box2;
+}
+
+#foot-box3 {
+    grid-area: box3;
+    justify-self: center;
+}
+
+#footer-btn {
+    background: linear-gradient(to left, var(--dark-violet) 50%, var(--violet) 50%) right;
+    background-size: 200%;
+    transition: all 0.3s ease-in-out;
+}
+
+#footer-btn:hover {
+    background-position: left;
+}
+
+#footer-btn span {
+    color: var(--violet);
+}
+
+.number2-box {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 150px;
+    background-color: var(--white);
+}
+
+.number2-box p {
+    font-size: 1rem;
+    line-height: 2.8rem;
+    color: var(--black);
+}
+
+/*Attribution Frontend Mentor*/
+.attribution {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--white);
+    font-weight: 900;
+}
+
+.attribution a:last-of-type {
+    color: var(--orange);
+}
+
+/* Classes and keyframes required for animations applied to single h1, h2, p or specific divs */
+
+:root {
+    --delay: 0;
+}
+
+.hero-text-box h1,
+.hero-text-box p,
+.hero-text-box .hero-buttons-box {
+    /*To allow JS calculating the right timing based on scrolling advancement*/
+    --delay: .1;
+}
+
+.card {
+    --delay: .2;
+}
+
+.company-text-box h3,
+.company-text-box h2,
+.company-text-box p {
+    /*To allow JS calculating the right timing based on scrolling advancement*/
+    --delay: .6;
+}
+
+.vertical-entrance-top-to-bottom {
+    transform: translateY(-100%);
+}
+
+.vertical-entrance-bottom-to-top {
+    transform: translateY(200%);
+}
+
+.horizontal-entrance-left-to-righ {
+    transform: translateX(-100%);
+}
+
+.horizontal-entrance-right-to-left {
+    transform: translateX(200%);
+}
+
+.slideIn-02s {
+    animation: slideIn .2s forwards;
+}
+
+.slideIn-06s {
+    animation: slideIn 0.6s forwards;
+}
+
+.animate {
+    opacity: 0;
+    animation-play-state: paused;
+    animation-delay: calc((var(--scroll) - var(--delay)) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+/* end of classes and keyframes for animations */
+
+
+/*MEDIA QUERIES*/
+@media screen and (max-width:1280px) {
+    .herobox {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "bck-img1 bck-img2"
+            "text text";
+        padding: 1rem 0 3rem 0;
+        row-gap: 2.5rem;
+    }
+
+    .gallery {
+        padding: 6rem 0 4rem 0;
+    }
+
+    .company-text-box h2 {
+        width: 100%;
+    }
+
+    .footer-centred-box {
+        width: 80%;
+        height: inherit;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        /*Used two dots for empty spaces in grid becacasue
+    i haven't created empty divs in html and if I used names
+    instead of '.' grid wouldn't work as expected in this case */
+        grid-template-areas:
+            "box1"
+            "box2"
+            "box3";
+        grid-gap: 3rem;
+    }
+
+    .footer-box {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .gallery-cards {
+        padding: 4rem 0 0 0;
+    }
+
+    .company-info-section {
+        grid-template-columns: 0.5fr 2.5fr 0.5fr;
+        grid-template-rows: auto;
+        /*Used two dots for empty spaces in grid becacasue
+    i haven0t created empty divs in html and if I used names
+    instead of '.' grid wouldn't work as expected in this case */
+        grid-template-areas: ". company-txt .";
+    }
+
+    .company-text-box {
+        width: 90%;
+        grid-area: company-txt;
+    }
+
+    .company-text-box h2 {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    .herobox {
+        row-gap: 0.5rem;
+    }
+
+    .herobox>.hbox>p>br {
+        display: none;
+    }
+
+    .hero-buttons-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons-box .button:first-of-type {
+        margin-bottom: 1.5rem;
+    }
+
+    .gallery-cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 45%;
+        margin-bottom: 3rem;
+    }
+
+    /*Increased delay only for mobile version since
+    the page will be longer and it'll take more scrolling
+    to get to the gallery section*/
+    .card {
+        --delay: .4;
+    }
+}
