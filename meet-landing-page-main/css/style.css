@@ -306,12 +306,16 @@ footer p {
     transition: all 0.3s ease-in-out;
 }
 
+#footer-btn span {
+    color: var(--violet);
+}
+
 #footer-btn:hover {
     background-position: left;
 }
 
-#footer-btn span {
-    color: var(--violet);
+#footer-btn:hover span {
+    color: var(--white);
 }
 
 .number2-box {
@@ -353,7 +357,6 @@ footer p {
 }
 
 /* Classes and keyframes required for animations applied to single h1, h2, p or specific divs */
-
 :root {
     --delay: 0;
 }
@@ -415,6 +418,7 @@ footer p {
         transform: translate(0, 0);
     }
 }
+
 /* end of classes and keyframes for animations */
 
 
