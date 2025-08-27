@@ -1,0 +1,360 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+:root {
+    --very-dark-grayish-blue: #48556a;
+    --desaturated-dark-blue: #6d7f97;
+    --grayish-blue: #9eafc2;
+    --light-grayish-blue: #ecf2f8;
+    --white: #fff;
+    --black: #161616;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    /*as reference for REM unit*/
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    /* available weight from 200 to 800 --> styleguide: 500 and 700 only */
+    background-color: var(--light-grayish-blue);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+}
+
+h1 {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    line-height: 1.8rem;
+    font-weight: 800;
+    color: var(--black);
+}
+
+h2 {
+    font-size: clamp(0.8rem, 4.5vw, 1rem);
+    font-weight: 800;
+    color: var(--black);
+}
+
+p {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+    font-weight: 500;
+    color: var(--very-dark-grayish-blue);
+}
+
+main {
+    width: 50%;
+    height: 40vh;
+    background-color: var(--white);
+    border-radius: 25px;
+    box-shadow: 1px 20px 30px 1px #6f727534;
+    justify-content: space-between;
+}
+
+.img-box {
+    height: 100%;
+    width: 40%;
+    overflow: hidden;
+    border-radius: 25px 0 0 25px;
+}
+
+.img-box img {
+    display: block;
+    height: 100%;
+    width: 120%;
+}
+
+.info-box {
+    width: 60%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.intro-text-box {
+    padding: 6% 6% 3% 6%;
+}
+
+.intro-text-box p {
+    margin-top: 1rem;
+    line-height: 1.5rem;
+}
+
+.user-box {
+    align-items: center;
+    justify-content: space-between;
+    padding: 3% 6% 6% 6%;
+    border-radius: 0 0 25px 0;
+}
+
+.user-info {
+    width: 80%;
+    align-items: center;
+    position: relative;
+    /* for .share-mobile-view */
+}
+
+.user-info.hidden {
+    display: none;
+}
+
+.usr-profile-pic-box {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.usr-profile-pic-box img {
+    width: 100%;
+}
+
+.usr-details-box {
+    margin-left: 1rem;
+}
+
+.usr-details-box p {
+    color: var(--grayish-blue);
+}
+
+.share-box {
+    width: 20%;
+    justify-content: center;
+    position: relative;
+    /* for .share-desktop-view */
+}
+
+.user-box img,
+.share-box img {
+    /* Did this cause <img> are inline tags, so they get aligned as if they were text and 
+    have an expra space below their bottom to align to the text baseline of their container. 
+    That means thatm if not turned into a block element, they'll always have an empry gap between
+    their bottom and the bottom of their container. */
+    display: block;
+}
+
+#share-btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: var(--light-grayish-blue);
+    /* for #share-btn img:*/
+    position: relative;
+    color: var(--desaturated-dark-blue);
+}
+
+#share-btn.dark {
+    background-color: var(--desaturated-dark-blue);
+}
+
+#share-btn.dark svg {
+    color: var(--light-grayish-blue);
+}
+
+#share-btn svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.share-desktop-view.hidden,
+.share-mobile-view.hidden {
+    display: none;
+}
+
+.share-desktop-view {
+    position: absolute;
+    top: -70px;
+    width: 200px;
+    padding: 12px 20px;
+    background-color: #48556a;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.share-desktop-view p {
+    font-size: 0.8rem;
+    color: var(--white);
+}
+
+/*Small triangle for pop up window effect*/
+.share-desktop-view::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--very-dark-grayish-blue) transparent transparent transparent;
+}
+
+.share-mobile-view {
+    width: 80%;
+    min-height: 60px;
+    background-color: transaparent;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--white);
+    padding-right: 18%;
+}
+
+.share-mobile-view p {
+    color: var(--grayish-blue);
+    letter-spacing: 0.20rem;
+}
+
+
+/* Attribution */
+.attribution {
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.attribution a {
+    color: var(--very-dark-grayish-blue);
+    font-weight: 500;
+}
+
+.attribution a:hover {
+    color: #275d4d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 1440px) {
+    main {
+        width: 60%;
+        height: 45vh;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    main {
+        width: 70%;
+        height: 45vh;
+    }
+
+    .img-box img {
+        width: 150%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    main {
+        flex-direction: column;
+        width: 50%;
+        height: 85vh;
+    }
+
+    .img-box {
+        width: 100%;
+        height: 40%;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .img-box img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .info-box {
+        width: 100%;
+        height: 60%;
+    }
+
+    .intro-text-box {
+        padding: 7% 7% 3.5% 7%;
+    }
+
+    .user-box {
+        padding: 3.5% 7% 3% 7%;
+        border-radius: 0 0 25px 25px;
+    }
+
+    .user-box.dark {
+        background-color: var(--very-dark-grayish-blue);
+        padding: 3.5% 7% 3% 7%;
+    }
+
+    .share-mobile-view p {
+        font-size: 1rem;
+    }
+
+    .share-mobile-view img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 80%;
+        height: 80vh;
+    }
+
+    .intro-text-box {
+        padding: 5% 7% 3.5% 7%;
+    }
+
+    .user-box {
+        padding: 3.5% 7% 4% 7%;
+    }
+
+    .user-box.dark {
+        background-color: var(--very-dark-grayish-blue);
+        padding: 3.5% 7% 4% 7%;
+    }
+
+    .share-mobile-view {
+        padding-right: 12%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    main {
+        width: 90%;
+        height: 80vh;
+    }
+
+    #share-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .share-mobile-view p {
+        font-size: 0.9rem;
+    }
+
+    .share-mobile-view img {
+        width: 20px;
+        height: 20px;
+    }
+}

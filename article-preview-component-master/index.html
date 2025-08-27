@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Frontend Mentor | Article preview component</title>
+</head>
+
+<body class="flex">
+  <main class="flex">
+    <div class="img-box">
+      <img src="images/drawers.jpg" alt="Image of a green wooden drawer on a white-brick wall">
+    </div>
+    <section class="info-box flex">
+
+      <div class="intro-text-box">
+        <h1>Shift the overall look and feel by adding these wonderful
+          touches to furniture in your home</h1>
+
+        <p>Ever been in a room and felt like something was missing? Perhaps
+          it felt slightly bare and uninviting. I’ve got some simple tips
+          to help you make any room feel complete.</p>
+      </div>
+
+      <div class="user-box flex">
+        <div class="user-info flex">
+          <div class="usr-profile-pic-box">
+            <img src="images/avatar-michelle.jpg" alt="Profile pic of user">
+          </div>
+          <div class="usr-details-box">
+            <h2>Michelle Appleton</h2>
+            <p>28 Jun 2020</p>
+          </div>
+        </div>
+        <!-- share-box for MOBILE, to share only when share-btn gets clicked.
+           This box wil lreplace the while .user-info div above when the use click the shsare btn-->
+        <div class="share-mobile-view flex hidden">
+          <p>share</p>
+          <a href="#" title="Go to our Facebook account" aria-label="Click here to go to our Facebook page"><img
+              src="images/icon-facebook.svg" alt="Facebook icon"></a>
+          <a href="#" title="Go to our Twitter account" aria-label="Click here to go to our Twitter page"><img
+              src="images/icon-twitter.svg" alt="Twitter icon"></a>
+          <a href="#" title="Go to our Pinterest account" aria-label="Click here to go to our Pinterest page"><img
+              src="images/icon-pinterest.svg" alt="Pinterest icon"></a>
+        </div>
+        <div class="share-box flex">
+          <a id="share-btn" href="#" title="Share article"
+            aria-label="Click here to see the options to share this article">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+              <path fill="currentColor" aria-label="Open the share menu"
+                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+            </svg>
+          </a>
+          <!-- share-box for DESKTOP, to share only when share-btn gets clicked.
+           This box is relative to the #share-btn to create the pop-up effect-->
+          <div class="share-desktop-view flex hidden">
+            <p>share</p>
+            <a href="#" title="Go to our Facebook account" aria-label="Click here to go to our Facebook page"><img
+                src="images/icon-facebook.svg" alt="Facebook icon"></a>
+            <a href="#" title="Go to our Twitter account" aria-label="Click here to go to our Twitter page"><img
+                src="images/icon-twitter.svg" alt="Twitter icon"></a>
+            <a href="#" title="Go to our Pinterest account" aria-label="Click here to go to our Pinterest page"><img
+                src="images/icon-pinterest.svg" alt="Pinterest icon"></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      title="Link to Frontend Mentor Homepage" aria-label="Go to Frontend Mentor homepage">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/devis4wd/frontend_mentor_challenges" tabindex="0"
+      title="Link to Github profile of D4WD" aria-label="Go to Github profile of D4WD" target="_blank">D4WD</a>.
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
